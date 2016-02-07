@@ -151,32 +151,44 @@
      </thead>
  
 <tbody><tr>
-<th style="width: 10%; text-align:left"> Profile Identifier
+<th style="width: 2%; text-align:left"> Profile Identifier
 </th>
-<th style="width: 30%; text-align:left"> Profile Designator
+<th style="width: 28%; text-align:left"> Profile Designator
 </th>
-<th style="width: 30%; text-align:left"> Profile Definition Document
+  <th style="width: 28%; text-align:left"> XPATH to element or attribute*
+  </th>
+  <th style="width: 28%; text-align:left"> Value of element or attribute*    
+  </th>  
+<th style="width: 5%; text-align:left"> Profile Definition Document
 </th>
-<th style="width: 30%; text-align:left"> Public Specification(s)
+<th style="width: 5%; text-align:left"> Public Specification(s)
 </th>
-<th style="width: 30%; text-align:left"> Requestor Contact
+<th style="width: 2%; text-align:left"> Requestor Contact
 </th></tr>
 <tr>
 <td> <code>tt1f</code>
 </td>
 <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-full</code>
 </td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-full">DFXP Full Profile</a>
+  <td> <code><nowiki>/tt/head/ttp:profile/@use</nowiki></code>  or <br/><code><nowiki>/tt/@ttp:profile</nowiki></code>    
+  </td>
+  <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-full</code>
+  </td>   
+  <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-full">DFXP Full Profile</a>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/TR/2013/REC-ttml1-20130924/">TTML1SE</a>
 </td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+  <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
 </td></tr>
 <tr>
 <td> <code>tt1p</code>
 </td>
-<td> <code>http://www.w3.org/ns/ttml/profile/dfxp-presentation</code>
+  <td>  <code>http://www.w3.org/ns/ttml/profile/dfxp-presentation</code>
 </td>
+  <td>  <code>/tt/head/ttp:profile/@use</code>  or <br/><code>/tt/@ttp:profile</code>
+  </td>
+  <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-presentation</code>
+  </td>
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-presentation">DFXP Presentation Profile</a>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/TR/2013/REC-ttml1-20130924/">TTML1SE</a>
@@ -188,7 +200,11 @@
 </td>
 <td> <code>http://www.w3.org/ns/ttml/profile/sdp-us</code>
 </td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/sdp-us">SDP US Profile</a>
+  <td> <code>/tt/head/ttp:profile/@use</code> 
+  </td>
+  <td> <code>http://www.w3.org/ns/ttml/profile/sdp-us</code>
+  </td>  
+  <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/sdp-us">SDP US Profile</a>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/TR/2013/NOTE-ttml10-sdp-us-20130205/">SDP-US</a>
 </td>
@@ -199,6 +215,10 @@
 </td>
 <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-transformation</code>
 </td>
+  <td> <code>/tt/head/ttp:profile/@use</code>  or <br/><code>/tt/@ttp:profile</code>
+  </td>
+  <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-transformation</code>
+  </td>  
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-transformation">DFXP Transformation Profile</a>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/TR/2013/REC-ttml1-20130924/">TTML1SE</a>
@@ -210,6 +230,11 @@
 </td>
 <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/text</code>
 </td>
+  <td> <code>/tt/@ttp:profile</code> or  <br/> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:conformsToStandard</code>
+  </code>
+  </td>
+  <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/text</code>
+  </td>  
 <td> <code>n/a</code>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/TR/ttml-imsc1">IMSC1 (Text Profile)</a>
@@ -221,6 +246,10 @@
 </td>
 <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/image</code>
 </td>
+  <td> <code>/tt/@ttp:profile</code>
+  </td>
+  <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/image</code>
+  </td>  
 <td> <code>n/a</code>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://www.w3.org/TR/ttml-imsc1">IMSC1 (Image Profile)</a>
@@ -232,6 +261,10 @@
 </td>
 <td> <code>urn:ebu:tt:exchange:2012-07</code>
 </td>
+  <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
+  </td>
+  <td> <code>v1.0</code>
+  </td>  
 <td> <code>n/a</code>
 </td>
 <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/docs/tech/tech3350.pdf">EBU-TT 1.0</a>
@@ -243,6 +276,10 @@
 </td>
 <td> <code>urn:ebu:tt:exchange:2015-09</code>
 </td>
+  <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
+  </td>
+  <td> <code>urn:ebu:tt:exchange:2015-09</code>
+  </td>  
 <td> <code>n/a</code>
 </td>
 <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/docs/tech/tech3350.pdf">EBU-TT 1.1</a>
@@ -254,6 +291,10 @@
 </td>
 <td> <code>urn:ebu:tt:distribution:2014-01</code>
 </td>
+  <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
+  </td>
+  <td> <code>urn:ebu:tt:distribution:2014-01</code>
+  </td>  
 <td> <code>n/a</code>
 </td>
 <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/docs/tech/tech3380.pdf">EBU-TT-D 1.0</a>
@@ -265,6 +306,10 @@
 </td>
 <td> <code>http://www.decellc.org/profile/cff-tt-text-1.1</code>
 </td>
+  <td> <code>...</code>
+  </td>
+  <td> <code>...</code>
+  </td>    
 <td> <code>n/a</code>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://uvcentral.com/public">CFF-TT v2.2 (Text Profile)</a>
@@ -276,13 +321,36 @@
 </td>
 <td> <code>http://www.decellc.org/profile/cff-tt-image-1.1</code>
 </td>
+  <td> <code>...</code>
+  </td>
+  <td> <code>...</code>
+  </td>  
 <td> <code>n/a</code>
 </td>
 <td> <a rel="nofollow" class="external text" href="http://uvcentral.com/public">CFF-TT v2.2 (Image Profile)</a>
 </td>
 <td> <a rel="nofollow" class="external text" href="https://www.myuv.com/en/us/uv-for-business">DECE</a>
-</td></tr></tbody></table>	
-					
+</td></tr>
+  <tr>
+    <td> <code>ede1</code>
+    </td>
+    <td> <code>urn:IRT:ebu-tt-basic-de:2013-07</code>
+    </td>
+    <td> <code>/tt/preceding-sibling::comment()[1]</code>
+    </td>
+    <td> <code>Profile: EBU-TT-D-Basic-DE</code>
+    </td>  
+    <td> <code>n/a</code>
+    </td>
+    <td> <a rel="nofollow" class="external text" href="https://www.irt.de/en/publications/technical-guidelines.html IRT">Technical Guidelines</a>
+    </td>
+    <td> <a rel="nofollow" class="external text" href="https://www.irt.de/">IRT</a>
+    </td></tr> 
+
+</tbody></table>					
+	 	  * The following considerations apply when resolving the XPATH expressions:
+	 	   <ul><li>if signalled in the TTML document</li><li> binding of namespaces to prefixes as defined in the corresponding specifications</li><li>XML default namespace is assumed to be <code><nowiki> 	http://www.w3.org/ns/ttml</nowiki></code></li></ul>
+	 	  
 </section>
 
 			             
