@@ -1,4 +1,4 @@
 # tt-profile-registry
 Profile registry for TTML
-HTML version available at https://w3c.github.io/tt-profile-registry/
 
+See the gh-pages branch version at http://w3c.github.io/tt-profile-registry/
