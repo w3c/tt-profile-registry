@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <title>TTML Profile Registry</title>
-    <meta charset='utf-8'>
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common'
-            async class='remove'></script>
-    <script class='remove'>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove"></script>
+    <script class="remove">
       var respecConfig = {
           // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
           specStatus:           "ED",
@@ -69,40 +68,79 @@
     </script>
   </head>
   <body>
-
-    <section id='abstract'>
-      <p>
-        This document ... @@@ draft your abstract here @@@.
+    <section id="abstract">
+      <p> This document ... @@@ draft your abstract here @@@. </p>
+    </section>
+    <section id="sotd">
+      <p> <b style="color:red;">This is an editor's draft. Work in progress</b>
       </p>
     </section>
-
-    <section id='sotd'>
-      <p>
-         <b style="color:red;">This is an editor's draft. Work in progress</b>
-      </p>
-
-
-    </section>
-
-    <section class='introductory'>
+    <section class="introductory">
       <h2>Introduction</h2>
-		<p> @@@ Draft your introduction here @@@ .</p>
+      <p> @@@ Draft your introduction here @@@ .</p>
+    </section>
+    <section id="purpose">
+      <h2>Purpose</h2>
+      <p>TTML defines a MIME type/subtype, <code>application/ttml+xml</code>,
+        that may be used to identify the content type of TTML resources. In
+        addition, TTML as well as other W3C and non-W3C specifications define a
+        number of processor profiles which define requirements on compliant
+        processors that may decode and process a TTML document. This registry
+        can be used by other entities to exchange processor profiles in a
+        compact way. In certain TTML use cases, it is desirable for a processor
+        to proceed with TTML resource fetch, decode, and processing only if it
+        can be determined that the referenced resource is tentatively
+        processable. In order to satisfy such use cases, it is possible for the
+        referencing context to enumerate one or more named profiles, which, if
+        supported by the processor, would allow a first-order determination to
+        be made about whether a resource may be processed. We say <i>first
+          order</i> here since during actual decoding of a TTML resource, the
+        processor profile declarations contained within the resource may result
+        in the resource being rejected.
+      </p>
+      <p>This registry is intended to provide a central location for enumerating
+        identified TTML profiles, or, more strictly speaking, TTML
+        decoder/processors, where each entry in the registry identifies a
+        particular profile which is understood to implement a processor capable
+        of satisfying the constraints of a defined TTML processor profile that
+        takes the form of a TTML Profile Definition Document. By utilizing a
+        common registry, it is possible to avoid name collisions among different
+        profile defining fora.
+      </p>
+      <p><b>Note Well</b> that, in the context of this registry, when we use the
+        term <i>profile</i>, we mean <i>processor profile</i>. We explicitly
+        do not mean <i>content profile</i>. That is, nothing about the use of
+        the <code>profile</code> parameter described here is intended to be
+        used to identify or make claims about whether a TTML resource conforms
+        with a TTML Content Profile or any type of TTML Profile that may be
+        interpreted in whole or in part as making statements about the
+        conformance of a TTML resource or the features of TTML (or other
+        external specifications) actually used in the resource.
+      </p>
+      <p>Applications using the entries in this registry are encouraged to adopt
+        the following combination syntax:
+      </p>
+      <p>Employ two combination operators, '+' (AND) and '|' (OR), which may be
+        used to specify, respectively, that multiple processor profiles apply
+        (simultaneously) or that any processor profile of a list of profiles may
+        apply individually. If both operators are used in a codecs value, then
+        the '+' operator has precedence.
+      </p>
+      <p>The example: "A+B|C+D|E" states that a TTML processor that implements
+        any one of A+B or C+D or E processor profiles satisfies, at first order,
+        the requirements to fetch and begin decode/processing of a TTML
+        document, where X+Y means that both X and Y processor profiles must be
+        supported, and X|Y means that either X or Y processor profile must be
+        supported
+      </p>
+      <p>For more information about processor profile combination, see <a rel="nofollow"
 
-	    </section>
-
-
-   	<section id="purpose">
-		   <h2>Purpose</h2>
-
-
-<p>TTML defines a MIME type/subtype, <code>application/ttml+xml</code>, that may be used to identify the content type of TTML resources. In addition, TTML as well as other W3C and non-W3C specifications define a number of processor profiles which define requirements on compliant processors that may decode and process a TTML document. This registry can be used by other entities to exchange processor profiles in a compact way. In certain TTML use cases, it is desirable for a processor to proceed with TTML resource fetch, decode, and processing only if it can be determined that the referenced resource is tentatively processable. In order to satisfy such use cases, it is possible for the referencing context to enumerate one or more named profiles, which, if supported by the processor, would allow a first-order determination to be made about whether a resource may be processed. We say <i>first order</i> here since during actual decoding of a TTML resource, the processor profile declarations contained within the resource may result in the resource being rejected.
-</p><p>This registry is intended to provide a central location for enumerating identified TTML profiles, or, more strictly speaking, TTML decoder/processors, where each entry in the registry identifies a particular profile which is understood to implement a processor capable of satisfying the constraints of a defined TTML processor profile that takes the form of a TTML Profile Definition Document. By utilizing a common registry, it is possible to avoid name collisions among different profile defining fora.
-</p><p><b>Note Well</b> that, in the context of this registry, when we use the term <i>profile</i>, we mean <i>processor profile</i>. We explicitly do not mean <i>content profile</i>. That is, nothing about the use of the <code>profile</code> parameter described here is intended to be used to identify or make claims about whether a TTML resource conforms with a TTML Content Profile or any type of TTML Profile that may be interpreted in whole or in part as making statements about the conformance of a TTML resource or the features of TTML (or other external specifications) actually used in the resource.
-
-	</section>
-
-	<section id="mediatype">
-		   <h2>Media Type Registration</h2>
+          class="external text" href="https://rawgit.com/w3c/ttml2/master/spec/ttml2.html#profile-attribute-processorProfileCombination">TTML2
+          Profile Combination</a>.
+      </p>
+    </section>
+  <section id="mediatype">
+       <h2>Media Type Registration</h2>
 
 <p>This section updates the media type, "application/ttml+xml" to add a new parameter, <code>codecs</code>. All other provisions of the
 media type specification remain the same.
@@ -297,240 +335,312 @@ This supercedes the initial registration information in <a href="http://www.w3.o
           <p>The W3C has change control over this specification.</p>
         </dd>
       </dl>
-    </div>		
+    </div>
 
-	  </section>
+    </section>
 
-	 	<section id="Registration_Entry_Requirements_and_Update_Process">
-
-<h2>Registration Entry Requirements and Update Process</h2>
-<ol>
-<li> Each entry must include a unique identification, where the scope of uniqueness is the set of identifiers defined in this registry. An identifier must conform with the <code>element</code> non-terminal of <a rel="nofollow" class="external text" href="http://tools.ietf.org/html/rfc6381">RFC6381</a> and, furthermore, may not contain any of the characters in the regular expression character class [+|].
-</li>
-<li> Each entry must include an absolute URI that serves as the TTML Profile Designator that identifies the processor profile.
-</li>
-<li> Each entry should include a link that references a TTML Profile Definition Document that formally specifies the processor profile using TTML profile definition vocabulary.
-</li>
-<li> Each entry should include a link that references a public available specification (PAS) that defines the identified processor profile.
-</li>
-<li> Each entry must include contact information of the requestor.
-</li>
-</ol>
-<p>An update to this registry is an addition, change or deletion of an entry. Any person can request an update to this registry by email notice to the chairman of the Timed Text Working Group who will place it on an upcoming meeting agenda and notify the requestor.  Consideration and disposition of the request is by consensus of the W3C Timed Text Working Group. The Chair will then notify the requestor of the outcome and update the registry accordingly.
-</p>
-
-
-		</section>
-
-	 	<section id=" id="Registry"">
-			<h2>Registry</h2>
-
-		<table class="simple" style="width:100%; border: 2px solid black">
-	   <thead>
-     </thead>
-
-<tbody><tr>
-<th style="width: 2%; text-align:left"> Profile Identifier
-</th>
-<th style="width: 28%; text-align:left"> Profile Designator
-</th>
-  <th style="width: 28%; text-align:left"> XPATH to element or attribute*
-  </th>
-  <th style="width: 28%; text-align:left"> Value of element or attribute*
-  </th>
-<th style="width: 5%; text-align:left"> Profile Definition Document
-</th>
-<th style="width: 5%; text-align:left"> Public Specification(s)
-</th>
-<th style="width: 2%; text-align:left"> Requestor Contact
-</th></tr>
-<tr>
-<td> <code>tt1f</code>
-</td>
-<td> <code>http://www.w3.org/ns/ttml/profile/dfxp-full</code>
-</td>
-  <td> <code><nowiki>/tt/head/ttp:profile/@use</nowiki></code>  or <br/><code><nowiki>/tt/@ttp:profile</nowiki></code>
-  </td>
-  <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-full</code>
-  </td>
-  <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-full">DFXP Full Profile</a>
-</td>
-<td> [[!TTML1]]
-</td>
-  <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
-</td></tr>
-<tr>
-<td> <code>tt1p</code>
-</td>
-  <td>  <code>http://www.w3.org/ns/ttml/profile/dfxp-presentation</code>
-</td>
-  <td>  <code>/tt/head/ttp:profile/@use</code>  or <br/><code>/tt/@ttp:profile</code>
-  </td>
-  <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-presentation</code>
-  </td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-presentation">DFXP Presentation Profile</a>
-</td>
-<td> [[!TTML1]]
-</td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
-</td></tr>
-<tr>
-<td> <code>tt1s</code>
-</td>
-<td> <code>http://www.w3.org/ns/ttml/profile/sdp-us</code>
-</td>
-  <td> <code>/tt/head/ttp:profile/@use</code>
-  </td>
-  <td> <code>http://www.w3.org/ns/ttml/profile/sdp-us</code>
-  </td>
-  <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/sdp-us">SDP US Profile</a>
-</td>
-<td> [[!TTML10-SDP-US]]
-</td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
-</td></tr>
-<tr>
-<td> <code>tt1t</code>
-</td>
-<td> <code>http://www.w3.org/ns/ttml/profile/dfxp-transformation</code>
-</td>
-  <td> <code>/tt/head/ttp:profile/@use</code>  or <br/><code>/tt/@ttp:profile</code>
-  </td>
-  <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-transformation</code>
-  </td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-transformation">DFXP Transformation Profile</a>
-</td>
-<td> [[!TTML1]]
-</td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
-</td></tr>
-<tr>
-<td> <code>im1t</code>
-</td>
-<td> <code>http://www.w3.org/ns/ttml/profile/imsc1/text</code>
-</td>
-  <td> <code>/tt/@ttp:profile</code> or  <br/> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:conformsToStandard</code>
-  </code>
-  </td>
-  <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/text</code>
-  </td>
-<td> <code>n/a</code>
-</td>
-<td> [[!TTML-IMSC1]]
-</td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
-</td></tr>
-<tr>
-<td> <code>im1i</code>
-</td>
-<td> <code>http://www.w3.org/ns/ttml/profile/imsc1/image</code>
-</td>
-  <td> <code>/tt/@ttp:profile</code>
-  </td>
-  <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/image</code>
-  </td>
-<td> <code>n/a</code>
-</td>
-<td> [[!TTML-IMSC1]]
-</td>
-<td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
-</td></tr>
-<tr>
-<td> <code>etx1</code>
-</td>
-<td> <code>urn:ebu:tt:exchange:2012-07</code>
-</td>
-  <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
-  </td>
-  <td> <code>v1.0</code>
-  </td>
-<td> <code>n/a</code>
-</td>
-<td> [[!EBU-TT-1]]
-</td>
-<td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/ebu-tt#">EBU</a>
-</td></tr>
-<tr>
-<td> <code>etx2</code>
-</td>
-<td> <code>urn:ebu:tt:exchange:2015-09</code>
-</td>
-  <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
-  </td>
-  <td> <code>urn:ebu:tt:exchange:2015-09</code>
-  </td>
-<td> <code>n/a</code>
-</td>
-<td> [[!EBU-TT-1]]
-</td>
-<td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/ebu-tt#">EBU</a>
-</td></tr>
-<tr>
-<td> <code>etd1</code>
-</td>
-<td> <code>urn:ebu:tt:distribution:2014-01</code>
-</td>
-  <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
-  </td>
-  <td> <code>urn:ebu:tt:distribution:2014-01</code>
-  </td>
-<td> <code>n/a</code>
-</td>
-<td> [[!EBU-TT-D]]
-</td>
-<td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/ebu-tt#">EBU</a>
-</td></tr>
-<tr>
-<td> <code>cft1</code>
-</td>
-<td> <code>http://www.decellc.org/profile/cff-tt-text-1.1</code>
-</td>
-  <td> <code>...</code>
-  </td>
-  <td> <code>...</code>
-  </td>
-<td> <code>n/a</code>
-</td>
-<td> [[!UV-DMedia]]
-</td>
-<td> <a rel="nofollow" class="external text" href="https://www.myuv.com/en/us/uv-for-business">DECE</a>
-</td></tr>
-<tr>
-<td> <code>cfi1</code>
-</td>
-<td> <code>http://www.decellc.org/profile/cff-tt-image-1.1</code>
-</td>
-  <td> <code>...</code>
-  </td>
-  <td> <code>...</code>
-  </td>
-<td> <code>n/a</code>
-</td>
-<td> [[!UV-DMedia]]</a>
-</td>
-<td> <a rel="nofollow" class="external text" href="https://www.myuv.com/en/us/uv-for-business">DECE</a>
-</td></tr>
-  <tr>
-    <td> <code>ede1</code>
-    </td>
-    <td> <code>urn:IRT:ebu-tt-basic-de:2013-07</code>
-    </td>
-    <td> <code>/tt/preceding-sibling::comment()[1]</code>
-    </td>
-    <td> <code>Profile: EBU-TT-D-Basic-DE</code>
-    </td>
-    <td> <code>n/a</code>
-    </td>
-    <td> <a rel="nofollow" class="external text" href="https://www.irt.de/en/publications/technical-guidelines.html">IRT Technical Guidelines</a>
-    </td>
-    <td> <a rel="nofollow" class="external text" href="https://www.irt.de/">IRT</a>
-    </td></tr>
-
-</tbody></table>
-	 	  <p>The following considerations apply when resolving the XPATH expressions:</p>
-	 	   <ul><li>if signalled in the TTML document</li><li> binding of namespaces to prefixes as defined in the corresponding specifications</li><li>XML default namespace is assumed to be <code><nowiki> 	http://www.w3.org/ns/ttml</nowiki></code></li></ul>
-
-</section>
-
+    <section id="Registration_Entry_Requirements_and_Update_Process">
+      <h2>Registration Entry Requirements and Update Process</h2>
+      <ol>
+        <li> Each entry must include a unique identification, where the scope of
+          uniqueness is the set of identifiers defined in this registry. An
+          identifier must conform with the <code>element</code> non-terminal of
+          <a rel="nofollow" class="external text" href="http://tools.ietf.org/html/rfc6381">RFC6381</a>
+          and, furthermore, may not contain any of the characters in the regular
+          expression character class [+|].
+        </li>
+        <li> Each entry must include an absolute URI that serves as the TTML
+          Profile Designator that identifies the processor profile.
+        </li>
+        <li> Each entry should include a link that references a TTML Profile
+          Definition Document that formally specifies the processor profile
+          using TTML profile definition vocabulary.
+        </li>
+        <li> Each entry should include a link that references a public available
+          specification (PAS) that defines the identified processor profile.
+        </li>
+        <li> Each entry must include contact information of the requestor.
+        </li>
+      </ol>
+      <p>An update to this registry is an addition, change or deletion of an
+        entry. Any person can request an update to this registry by email notice
+        to the chairman of the Timed Text Working Group who will place it on an
+        upcoming meeting agenda and notify the requestor. Consideration and
+        disposition of the request is by consensus of the W3C Timed Text Working
+        Group. The Chair will then notify the requestor of the outcome and
+        update the registry accordingly.
+      </p>
+    </section>
+    <section id=" id=" registry""="">
+      <h2>Registry: Profile designator and specifications</h2>
+      <table class="simple" style="width:100%; border: 2px solid black">
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <th style="width: 2%; text-align:left"> Profile Identifier
+            </th>
+            <th style="width: 28%; text-align:left"> Profile Designator
+            </th>
+            <th style="width: 5%; text-align:left"> Public Specification(s)
+            </th>
+            <th style="width: 2%; text-align:left"> Requestor Contact
+            </th>
+          </tr>
+          <tr>
+            <td> <code>tt1f</code>
+            </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-full</code>
+            </td>
+            <td> [[!TTML1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>tt1p</code>
+            </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-presentation</code>
+            </td>
+            <td> [[!TTML1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>tt1s</code>
+            </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/sdp-us</code>
+            </td>
+            <td> [[!TTML10-SDP-US]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>tt1t</code>
+            </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-transformation</code>
+            </td>
+            <td> [[!TTML1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>im1t</code>
+            </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/text</code>
+            </td>
+            <td> [[!TTML-IMSC1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>im1i</code>
+            </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/image</code>
+            </td>
+            <td> [[!TTML-IMSC1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etx1</code>
+            </td>
+            <td> <code>urn:ebu:tt:exchange:2012-07</code>
+            </td>
+            <td> [[!EBU-TT-1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/ebu-tt#">EBU</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etx2</code>
+            </td>
+            <td> <code>urn:ebu:tt:exchange:2015-09</code>
+            </td>
+            <td> [[!EBU-TT-1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/ebu-tt#">EBU</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etd1</code>
+            </td>
+            <td> <code>urn:ebu:tt:distribution:2014-01</code>
+            </td>
+            <td> [[!EBU-TT-D]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/ebu-tt#">EBU</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>cft1</code>
+            </td>
+            <td> <code>http://www.decellc.org/profile/cff-tt-text-1.1</code>
+            </td>
+            <td> [[!UV-DMedia]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://www.myuv.com/en/us/uv-for-business">DECE</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>cfi1</code>
+            </td>
+            <td> <code>http://www.decellc.org/profile/cff-tt-image-1.1</code>
+            </td>
+            <td> [[!UV-DMedia]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://www.myuv.com/en/us/uv-for-business">DECE</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>ede1</code> </td>
+            <td> <code>urn:IRT:ebu-tt-basic-de:2013-07</code> </td>
+            <td> <a rel="nofollow" class="external text" href="https://www.irt.de/en/publications/technical-guidelines.html">IRT
+                Technical Guidelines</a> </td>
+            <td> <a rel="nofollow" class="external text" href="https://www.irt.de/">IRT</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Registry: Path&nbsp; and value</h2>
+      <table class="simple" style="width:100%; border: 2px solid black">
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <th style="width: 2%; text-align:left"> Profile Identifier
+            </th>
+            <th style="width: 28%; text-align:left"> XPATH to element or
+              attribute* </th>
+            <th style="width: 28%; text-align:left"> Value of element or
+              attribute* </th>
+            <th style="width: 5%; text-align:left"> Profile Definition Document
+            </th>
+          </tr>
+          <tr>
+            <td> <code>tt1f</code>
+            </td>
+            <td> <code><nowiki>/tt/head/ttp:profile/@use</nowiki></code> or <br>
+              <code><nowiki>/tt/@ttp:profile</nowiki></code> </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-full</code> </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-full">DFXP
+                Full Profile</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>tt1p</code>
+            </td>
+            <td> <code>/tt/head/ttp:profile/@use</code> or <br>
+              <code>/tt/@ttp:profile</code> </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-presentation</code>
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-presentation">DFXP
+                Presentation Profile</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>tt1s</code>
+            </td>
+            <td> <code>/tt/head/ttp:profile/@use</code> </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/sdp-us</code> </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/sdp-us">SDP
+                US Profile</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>tt1t</code>
+            </td>
+            <td> <code>/tt/head/ttp:profile/@use</code> or <br>
+              <code>/tt/@ttp:profile</code> </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/dfxp-transformation</code>
+            </td>
+            <td> <a rel="nofollow" class="external text" href="http://www.w3.org/ns/ttml/profile/dfxp-transformation">DFXP
+                Transformation Profile</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>im1t</code>
+            </td>
+            <td> <code>/tt/@ttp:profile</code> or <br>
+              <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:conformsToStandard</code>
+            </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/text</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>im1i</code>
+            </td>
+            <td> <code>/tt/@ttp:profile</code> </td>
+            <td> <code>http://www.w3.org/ns/ttml/profile/imsc1/image</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etx1</code>
+            </td>
+            <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
+            </td>
+            <td> <code>v1.0</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etx2</code>
+            </td>
+            <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
+            </td>
+            <td> <code>urn:ebu:tt:exchange:2015-09</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etd1</code>
+            </td>
+            <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
+            </td>
+            <td> <code>urn:ebu:tt:distribution:2014-01</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>cft1</code>
+            </td>
+            <td> <code>...</code> </td>
+            <td> <code>...</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>cfi1</code>
+            </td>
+            <td> <code>...</code> </td>
+            <td> <code>...</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>ede1</code> </td>
+            <td> <code>/tt/preceding-sibling::comment()[1]</code> </td>
+            <td> <code>Profile: EBU-TT-D-Basic-DE</code> </td>
+            <td> <code>n/a</code> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The following considerations apply when resolving the XPATH
+        expressions:</p>
+      <ul>
+        <li>if signalled in the TTML document</li>
+        <li> binding of namespaces to prefixes as defined in the corresponding
+          specifications</li>
+        <li>XML default namespace is assumed to be <code><nowiki>
+              http://www.w3.org/ns/ttml</nowiki></code></li>
+      </ul>
+    </section>
   </body>
 </html>
