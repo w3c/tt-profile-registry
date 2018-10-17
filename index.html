@@ -62,9 +62,39 @@
           localBiblio: {
             "EBU-TT-1": {
               title: "Part 1: EBU-TT Subtitling format definition (EBU Tech 3350)",
-              href: "https://tech.ebu.ch/docs/tech/tech3350.pdf",
+              href: "https://tech.ebu.ch/docs/tech/tech3350v1-0.pdf",
               publisher: "European Broadcasting Union",
               date: "September 2015"
+            },
+            "EBU-TT-1-2": {
+              title: "Part 1: EBU-TT Subtitling format definition (EBU Tech 3350 version 1.2)",
+              href: "https://tech.ebu.ch/docs/tech/tech3350v1_2.pdf",
+              publisher: "European Broadcasting Union",
+              date: "May 2017"
+            },
+            "EBU-TT-D": {
+              title: "EBU-TT-D Subtitling Distribution Format (EBU Tech 3380 version 1)",
+              href: "https://tech.ebu.ch/docs/tech/tech3380v1_0.pdf",
+              publisher: "European Broadcasting Union",
+              date: "March 2015"
+            },
+            "EBU-TT-D-1-0-1": {
+              title: "EBU-TT-D Subtitling Distribution Format (EBU Tech 3380 version 1.0.1)",
+              href: "https://tech.ebu.ch/docs/tech/tech3380v1_0_1.pdf",
+              publisher: "European Broadcasting Union",
+              date: "May 2018"
+            },
+            "EBU-TT-Live": {
+              title: "EBU-TT, Part 3 Live Subtitling Applications (EBU Tech 3370 version 1)",
+              href: "https://tech.ebu.ch/docs/tech/tech3370v1_0.pdf",
+              publisher: "European Broadcasting Union",
+              date: "May 2017"
+            },
+            "EBU-TT-Metadata": {
+              title: "EBU-TT, Part M Metadata Definitions (EBU Tech 3390 version 1)",
+              href: "https://tech.ebu.ch/docs/tech/tech3390.pdf",
+              publisher: "European Broadcasting Union",
+              date: "May 2017"
             },
             "UV-DMedia": {
               title: "Common File Format & Media Formats Specification version 2.2",
@@ -142,7 +172,7 @@
       <p>For more information about processor profile combination, see <a rel="nofollow"
 
           class="external text" href="https://www.w3.org/TR/ttml2/#profile-attribute-processorProfileCombination">TTML2
-          Profile Combination (https://www.w3.org/TR/ttml2/#profile-attribute-processorProfileCombination)</a> [[!TTML2]].
+          Profile Combination (https://www.w3.org/TR/ttml2/#profile-attribute-processorProfileCombination)</a> [[TTML2]].
       </p>
     </section>
   <section id="mediatype">
@@ -500,11 +530,41 @@ This supersedes the initial registration information in <a href="http://www.w3.o
             </td>
           </tr>
           <tr>
+            <td> <code>etx3</code>
+            </td>
+            <td> <code>urn:ebu:tt:exchange:2017-05</code>
+            </td>
+            <td> [[!EBU-TT-1-2]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
+            </td>
+          </tr>
+          <tr>
             <td> <code>etd1</code>
             </td>
             <td> <code>urn:ebu:tt:distribution:2014-01</code>
             </td>
             <td> [[!EBU-TT-D]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etd2</code>
+            </td>
+            <td> <code>urn:ebu:tt:distribution:2018-04</code>
+            </td>
+            <td> [[!EBU-TT-D-1-0-1]]
+            </td>
+            <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etl1</code>
+            </td>
+            <td> <code>urn:ebu:tt:live:2017-05</code>
+            </td>
+            <td> [[!EBU-TT-Live]]
             </td>
             <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
             </td>
@@ -541,7 +601,7 @@ This supersedes the initial registration information in <a href="http://www.w3.o
       </table>
       </section>
       <section id='registry-path-and-value'>
-      <h2>Path&nbsp; and value</h2>
+      <h2>Path and value</h2>
       <p>The following table describes how to identify the profile of a given TTML Document Instance for each profile in this Registry, by inspecting the document, where possible. The XPATH defines where a profile-identifying value can be found within the document instance, and the Value column specifies the value that the resultant data has if the document instance claims conformance to the profile. Where a TTML Profile Definition Document is available this is also listed.</p>
       <table class="simple" style="width:100%; border: 2px solid black">
         <thead>
@@ -652,11 +712,41 @@ This supersedes the initial registration information in <a href="http://www.w3.o
             </td>
           </tr>
           <tr>
+            <td> <code>etx3</code>
+            </td>
+            <td> <code>/tt/head/metadata/ebuttm:conformsToStandard</code> (preferred) or <br/>
+              <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:conformsToStandard</code> (deprecated)
+            </td>
+            <td> <code>urn:ebu:tt:exchange:2017-05</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
             <td> <code>etd1</code>
             </td>
             <td> <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:documentEbuttVersion</code>
             </td>
             <td> <code>urn:ebu:tt:distribution:2014-01</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etd2</code>
+            </td>
+            <td> <code>/tt/head/metadata/ebuttm:conformsToStandard</code> (preferred) or <br/>
+              <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:conformsToStandard</code> (deprecated)
+            </td>
+            <td> <code>urn:ebu:tt:distribution:2018-04</code> </td>
+            <td> <code>n/a</code>
+            </td>
+          </tr>
+          <tr>
+            <td> <code>etl1</code>
+            </td>
+            <td> <code>/tt/head/metadata/ebuttm:conformsToStandard</code> (preferred) or <br/>
+              <code>/tt/head/metadata/ebuttm:documentMetadata/ebuttm:conformsToStandard</code> (deprecated)
+            </td>
+            <td> <code>urn:ebu:tt:live:2017-05</code> </td>
             <td> <code>n/a</code>
             </td>
           </tr>
@@ -692,6 +782,22 @@ This supersedes the initial registration information in <a href="http://www.w3.o
           specifications</li>
         <li>XML default namespace is assumed to be <code>http://www.w3.org/ns/ttml</code></li>
       </ul>
+      <p>The <code>ebuttm:</code> prefix is used for the URN <code>urn:ebu:tt:metadata</code>;
+        that namespace, and the <code>ebuttm:conformsToStandard</code> and
+        <code>ebuttm:documentMetadata</code>
+        elements are defined by [[!EBU-TT-Metadata]].
+      </p>
+      <div class="note">The EBU-TT subtitle file format is intended for archiving,
+        exchange and live subtitle transmission. [[EBU-TT-Metadata]] defines
+        metadata entities intended to
+        support industry accepted practises established by legacy formats. In
+        addition, where relevant, defined values for metadata entities have been
+        extended from legacy uses to cater for subsequent developments in the
+        broadcast industry (e.g. frame rates) since these legacy formats were
+        standardised.</p>
+        <p>EBU-TT Metadata can be used in TTML documents other than
+        EBU-TT profile documents.</p>
+      </div>
     </section>
     </section>
   </body>
