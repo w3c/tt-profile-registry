@@ -742,14 +742,16 @@ This supersedes the initial registration information in <a href="http://www.w3.o
         expressions:</p>
       <ul>
         <li>if signalled in the TTML document</li>
-        <li> binding of namespaces to prefixes as defined in the corresponding
+        <li>binding of namespaces to prefixes as defined in the corresponding
           specifications</li>
         <li>XML default namespace is assumed to be <code>http://www.w3.org/ns/ttml</code></li>
+        <li>the <code>ebuttm:</code> prefix corresponds to the namespace URN
+          <code>urn:ebu:tt:metadata</code> defined by [[!EBU-TT-M]]</li>
+        <li>All other namespace prefixes are the same as those used in [[!TTML1]]</li>
       </ul>
-      <p>The <code>ebuttm:</code> prefix is used for the URN <code>urn:ebu:tt:metadata</code>;
-        that namespace, and the <code>ebuttm:conformsToStandard</code> and
-        <code>ebuttm:documentMetadata</code>
-        elements are defined by [[!EBU-TT-M]].
+      <p>The elements <code>ebuttm:conformsToStandard</code>  
+        and <code>ebuttm:documentMetadata</code> 
+        are defined by [[!EBU-TT-M]].
       </p>
       <div class="note">The EBU-TT subtitle file format is intended for archiving,
         exchange and live subtitle transmission. [[EBU-TT-M]] defines
