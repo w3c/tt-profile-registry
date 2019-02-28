@@ -99,7 +99,7 @@
     <section id="abstract">
       <h2>Abstract</h2>
       <p>This document defines
-      the <a href='#mediatype'><code>application/xml+ttml</code></a> media
+      the <a href='#mediatype'><code>application/ttml+xml</code></a> media
       type and provides a registry of compact (short) identifiers that may be
       used to identify TTML processor profiles. A processor profile specifies
       a set of capabilities that a processor must support in order to process
@@ -120,31 +120,11 @@
     </section>
     <section id="purpose" class='informative'>
       <h2>Purpose</h2>
-      <p>A MIME type and subtype
-        combination, <code>application/ttml+xml</code>, was initially
-        defined in [[TTML1-1e]], Appendix C, and subsequently updated
-        by [[TTML1-2e]] and [[TTML1-3e]] in order to identify the
-        content type of TTML resources. In addition, TTML as well as
-        other W3C and non-W3C specifications define a number of
-        processor profiles which specify requirements on processors
-        that may decode and process a TTML document. This document
-        augments the definition of this MIME type by specifying a
-        new <code>codecs</code> MIME type parameter and a set of
-        publicly registered compact (short) identifiers to be used
-        with this parameter during the exchange of TTML document
-        entities.</p>
-      <p>In certain use cases, it is desirable for a processor to perform
-        resource fetch, decode, and processing operations only if it can be
-        determined that the referenced resource is tentatively processable. In
-        order to satisfy such use cases, it is possible for the referencing
-        context to enumerate one or more identified processor profiles, which,
-        if supported by the processor, would allow a first-order determination
-        to be made about whether a resource may be processed. We say <i>first
-        order</i> here since during actual decoding of a TTML resource, the
-        processor profile declarations contained within the resource may
-        result in the resource being rejected.</p>
-      <p>This registry is intended to provide a central location for enumerating
-        identified TTML profiles, or, more strictly speaking, TTML
+      <p>This document serves two purposes: (1) to define the Media Type
+        <code>application/ttml+xml</code>, and (2) to define a registry
+        of compact (short) identifiers of TTML processor profiles.</p>
+      <p>As a registry, this document is intended to provide a central location for enumerating
+        identified TTML processor profiles, or, more strictly speaking, TTML
         decoder/processors, where each entry in the registry identifies a
         particular profile which is understood to implement a processor capable
         of satisfying the constraints of a defined TTML processor profile that
@@ -155,7 +135,8 @@
         <p>In the context of this registry, the term <i>profile</i>
           means <i>processor profile</i>. It explicitly does not
           mean <i>content profile</i>. That is, nothing about the use
-          of the <code>profile</code> parameter described here is
+          of the <code>profile</code>
+          or <code>codecs</code> parameters described here is
           intended to be used to identify or make claims about whether
           a TTML resource conforms with a TTML Content Profile or any
           type of TTML Profile that may be interpreted in whole or in
@@ -183,7 +164,7 @@
          (https://www.w3.org/TR/ttml2/#profile-attribute-processorProfileCombination)</a>
          [[TTML2-1e]].</p>
     </section>
-    <section id="mediatype">
+    <section id="mediatype" class='normative'>
       <h2>Media Type Registration</h2>
       <p>This section defines the media type "application/ttml+xml",
         and, in conformance with
@@ -372,7 +353,7 @@
         </dd>
       </dl>
     </section>
-    <section id="Registration_Entry_Requirements_and_Update_Process">
+    <section id="Registration_Entry_Requirements_and_Update_Process" class='normative'>
       <h2>Registration Entry Requirements and Update Process</h2>
       <ol>
         <li>Each entry must include a unique identification, where the
@@ -407,7 +388,7 @@
         values. That is, the intent is that profile entries are
         "stable".</p>
     </section>
-    <section id="registry">
+    <section id="registry" class='normative'>
       <h2>Registry</h2>
       <p>This section is the registry of short form profile
         identifiers. The first sub-section details how such
@@ -791,7 +772,6 @@
         </table>
         <p>The following considerations apply when resolving the XPATH
           expressions:</p>
-
         <ul>
           <li>if signalled in the TTML document</li>
           <li>binding of namespaces to prefixes as defined in the
