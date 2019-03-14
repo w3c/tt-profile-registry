@@ -140,25 +140,33 @@
           resource or the features of TTML (or other external
           specifications) actually used in the resource.</p>
       </div>
-      <p>Applications using the entries in this registry are encouraged to adopt
-        the following combination syntax:</p>
-      <p>Employ two combination operators, '+' (AND) and '|' (OR), which may be
-        used to specify, respectively, that multiple processor profiles apply
+      <p>Applications using the entries in this registry are encouraged to support
+        values of the <code>codecs</code> parameter that 
+        employ either (or both) of two combination operators, <code>+</code> (AND) and <code>|</code> (OR), which may be
+        used to specify, respectively, that all processor profiles apply
         (simultaneously) or that any processor profile of a list of profiles may
-        apply individually. If both operators are used in a codecs value, then
-        the '+' operator has precedence.</p>
-      <p>The example: "A+B|C+D|E" states that a TTML processor that implements
-        any one of A+B or C+D or E processor profiles satisfies
+        apply individually. If both operators are used, then
+        the <code>+</code> operator has precedence.</p>
+      <p class="note">The <code>+</code> and <code>|</code> operators
+        are intended to have semantics equivalent to the
+        the <code>all(...)</code> and the <code>any(...)</code>
+        function syntax supported by
+        the <code>ttp:processorProfiles</code> attribute as defined by
+        [[TTML2-1e]], &#x00A7;6.2.8. Take note, however, that the
+        combined use of both <code>all(...)</code> and <code>any(...)</code> in
+        a <code>ttp:processorProfiles</code> attribute value
+        expression is not directly supported by [[TTML2-1e]], and,
+        therefore, an application that encounters a combination of
+        both operators in a <code>codecs</code> value expression will
+        need to process such combination semantics as a higher level
+        protocol outside the scope of [[TTML2-1e]] semantics.</p>
+      <p class="note">The example <code>A+B|C+D|E</code> specifies that a TTML processor that implements
+        any one of the <code>A+B</code> or <code>C+D</code> or <code>E</code> processor profiles satisfies
         the requirements to fetch and begin decode/processing of a TTML
-        document, where X+Y means that both X and Y processor profiles must be
-        supported, and X|Y means that either X or Y processor profile must be
+        document, where <code>X+Y</code> means that both <code>X</code> and <code>Y</code> processor profiles must be
+        supported, and <code>X|Y</code> means that either <code>X</code> or <code>Y</code> processor profile must be
         supported.</p>
-      <p>For more information about processor profile combination,
-         see <a rel="nofollow" class="external text"
-         href="https://www.w3.org/TR/ttml2/#profile-attribute-processorProfileCombination">TTML2
-         Profile Combination
-         (https://www.w3.org/TR/ttml2/#profile-attribute-processorProfileCombination)</a>
-         [[TTML2-1e]].</p>
+      <p></p>
     </section>
     <section id="mediatype" class='normative'>
       <h2>Media Type Registration</h2>
@@ -230,10 +238,6 @@
                 document, where X+Y means that both X and Y processor
                 profiles must be supported, and X|Y means that either
                 X or Y processor profile must be supported.</p>
-              <p>For more information about processor profile
-                combination, see <a rel="nofollow" class="external text"
-                href="https://www.w3.org/TR/ttml2/#profile-attribute-processorProfileCombination">TTML2
-                Profile Combination</a>.</p>
             </dd>
           </dl>
         </dd>
