@@ -352,13 +352,20 @@
     <section id="Registration_Entry_Requirements_and_Update_Process" class='normative'>
       <h2>Registration Entry Requirements and Update Process</h2>
       <ol>
-        <li>Each entry must include a unique identification, where the
+        <li><p>Each entry must include a unique identification, where the
           scope of uniqueness is the set of identifiers defined in
           this registry. An identifier must conform with
-          the <code>element</code> non-terminal of
-          <a rel="nofollow" class="external text" href="http://tools.ietf.org/html/rfc6381">RFC6381</a>
+          the <code>element</code> non-terminal of [[!RFC6381]]
           and, furthermore, may not contain any of the characters in the regular
-          expression character class [+|].</li>
+          expression character class <code>[+|]</code>.</p>
+          <div class="note">
+            <p>As a consequence of the above syntactic constraints,
+              the value space of the <code>codecs</code> parameter described
+              in <a href="#mediatype"></a> above is a syntactic subset of the
+              definition of the <code>codecs</code> parameter
+              defined by [[RFC6381]].</p>
+          </div>
+       </li>
         <li>Each entry must include an absolute URI that serves as the
           TTML Profile Designator that identifies the processor
           profile.</li>
