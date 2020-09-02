@@ -105,6 +105,23 @@
           // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
       };
     </script>
+    <style>
+  table.coldividers td + td { border-left:1px solid gray; text-align: center;}
+  table.syntax { border: 0px solid black; width: 85%; border-collapse: collapse }
+  table.syntax caption { font-weight: bold; text-align: left; padding-bottom: 0.5em }
+  table.syntax th { border: 0px solid black; text-align: left }
+  table.syntax td { border: 0px solid black }
+  table.syntax div { background-color: #ffffc8 }
+  div.exampleInner { background-color: #d5dee3;
+                   border-top-width: 4px;
+                   border-top-style: double;
+                   border-top-color: #d3d3d3;
+                   border-bottom-width: 4px;
+                   border-bottom-style: double;
+                   border-bottom-color: #d3d3d3;
+                   padding: 4px; margin: 0em }
+
+    </style>
   </head>
   <body>
     <section id="abstract">
@@ -123,8 +140,9 @@
       of inline profile definitions) is not considered to be an identifiable,
       shared profile definition, but rather, a private profile definition
       scoped to the document instance in which it is defined.</p>
-    </section>
-    <section id="sotd"></section>
+
+    </section> <!-- abstract -->
+    <section id="sotd"></section> <!-- sotd -->
     <section id="purpose" class="informative">
       <h2>Purpose</h2>
       <p>This document serves two purposes: (1) to define the Media Type
@@ -152,7 +170,34 @@
           specifications) actually used in the resource.</p>
       </div>
       <p>Applications using the entries in this registry are encouraged to support
-        values of the <code>codecs</code> parameter that 
+        the <code>codecs</code> parameter.</p>
+      <p>The <code>codecs</code> parameter value syntax is defined as 
+        <code>codecs-parameter-value</code> as follows,
+        expressed using the syntax expression conventions defined by §2.3 of [[TTML2-1e]].</p>
+      <table class="syntax">
+        <tbody>
+          <tr>
+            <td>
+              <div class="exampleInner">
+                <pre class="nohighlight">
+identifier
+: element                            // element defined by [RFC6381]
+                                     // where "+" and "|" are prohibited characters
+
+and-group
+: identifier ["+" identifier]*       // no linear white-space is implied or permitted
+                                     // between each token
+
+codecs-parameter-value
+: and_group ["|" and-group]*         // no linear white-space is implied or permitted
+                                     // between each token 
+</pre>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The <code>codecs</code> parameter may
         employ either (or both) of two combination operators, <code>+</code> (AND) and <code>|</code> (OR), which may be
         used to specify, respectively, that all processor profiles apply
         (simultaneously) or that any processor profile of a list of profiles may
@@ -171,14 +216,14 @@
         both operators in a <code>codecs</code> value expression will
         need to process such combination semantics as a higher level
         protocol outside the scope of [[TTML2-1e]] semantics.</p>
-      <p class="note">The example <code>A+B|C+D|E</code> specifies that a TTML processor that implements
+        <p class="note">The example <code>A+B|C+D|E</code> specifies that a TTML processor that implements
         any one of the <code>A+B</code> or <code>C+D</code> or <code>E</code> processor profiles satisfies
         the requirements to fetch and begin decode/processing of a TTML
         document, where <code>X+Y</code> means that both <code>X</code> and <code>Y</code> processor profiles must be
         supported, and <code>X|Y</code> means that either <code>X</code> or <code>Y</code> processor profile must be
         supported.</p>
       <p></p>
-    </section>
+    </section> <!-- purpose -->
     <section id="mediatype" class="normative">
       <h2>Media Type Registration</h2>
       <p>This section defines the media type "application/ttml+xml",
@@ -363,7 +408,7 @@
           <p>The W3C has change control over this specification.</p>
         </dd>
       </dl>
-    </section>
+    </section> <!-- mediatype -->
     <section id="Registration_Entry_Requirements_and_Update_Process" class="normative">
       <h2>Registration Entry Requirements and Update Process</h2>
       <ol>
@@ -405,7 +450,7 @@
         deleted, there is no intent to re-use deleted profile
         values. That is, the intent is that profile entries are
         "stable".</p>
-    </section>
+    </section> <!-- Registration_Entry_Requirements_and_Update_Process -->
     <section id="registry" class="normative">
       <h2>Registry</h2>
       <p>This section is the registry of short form profile
@@ -658,7 +703,7 @@
             </tr>
           </tbody>
         </table>
-        </section>
-    </section>
+        </section> <!-- registry-profile-designator-specifications -->
+    </section> <!-- registry -->
   </body>
 </html>
