@@ -182,7 +182,8 @@
                 <pre class="nohighlight">
 identifier
 : element                            // element defined by [RFC6381]
-                                     // where "+" and "|" are prohibited characters
+                                     // where "+", "|" and "." are prohibited characters
+                                     // ("." is reserved as a hierarchy delimiter in [RFC6381])
 
 and-group
 : identifier ["+" identifier]*       // no linear white-space is implied or permitted
@@ -420,7 +421,7 @@ codecs-parameter-value
           this registry. An identifier must conform with
           the <code>element</code> non-terminal of [[!RFC6381]]
           and, furthermore, may not contain any of the characters in the regular
-          expression character class <code>[+|]</code>.</p>
+          expression character class <code>[+|.]</code>.</p>
           <div class="note">
             <p>As a consequence of the above syntactic constraints,
               the value space of the <code>codecs</code> parameter described
