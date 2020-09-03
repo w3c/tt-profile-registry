@@ -223,6 +223,14 @@ codecs-parameter-value
         document, where <code>X+Y</code> means that both <code>X</code> and <code>Y</code> processor profiles must be
         supported, and <code>X|Y</code> means that either <code>X</code> or <code>Y</code> processor profile must be
         supported.</p>
+        <p class="note">For example,
+        the <code>codecs</code> string for specifying either a TTML processor that supports
+        [[IMSC1.0.1]] Text Profile or one that supports [[EBU-TT-D-1]]
+        would be `"im1t|etd1"`.
+        The <code>codecs</code> string for specifying a TTML processor that supports
+        the union of sets of required features of both
+        [[IMSC1.0.1]] Text Profile and [[EBU-TT-D-1]]
+        would be `"im1t+etd1"`.</p>
         <p class="note">Another <code>codecs</code> parameter is defined by
         [[RFC6381]] for application/mp4 (ISO BMFF) and
         extended for TTML by [[iso14496-30]].</p>
