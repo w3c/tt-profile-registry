@@ -189,7 +189,7 @@ and-group
                                      // between each token
 
 codecs-parameter-value
-: and_group ["|" and-group]*         // no linear white-space is implied or permitted
+: and-group ["|" and-group]*         // no linear white-space is implied or permitted
                                      // between each token 
 </pre>
               </div>
@@ -222,8 +222,9 @@ codecs-parameter-value
         document, where <code>X+Y</code> means that both <code>X</code> and <code>Y</code> processor profiles must be
         supported, and <code>X|Y</code> means that either <code>X</code> or <code>Y</code> processor profile must be
         supported.</p>
-        <p class="note">A similarly-named <code>codecs</code> parameter
-        is defined by [[iso14496-30]] for use in ISOBMFF (MPEG4).</p>
+        <p class="note">Another <code>codecs</code> parameter is defined by
+        [[RFC6381]] for application/mp4 (ISO BMFF) and
+        extended for TTML by [[iso14496-30]].</p>
         <p></p>
     </section> <!-- purpose -->
     <section id="mediatype" class="normative">
