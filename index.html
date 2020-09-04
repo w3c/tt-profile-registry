@@ -20,14 +20,22 @@
           // only "name" is required
           editors:  [
               {
-                  name:       "Glenn Adams",
-                  company:    "Skynav",
-                  w3cid:      "34030"
-              },
-              {
                   name:       "Mike Dolan",
                   company:    "TBT",
                   w3cid:      "34379"
+              },
+              {
+                  name:       "Nigel Megitt",
+                  company:    "British Broadcasting Corporation",
+                  w3cid:      "64750"
+              }
+          ],
+
+          formerEditors:  [
+              {
+                  name:       "Glenn Adams",
+                  company:    "Skynav",
+                  w3cid:      "34030"
               }
           ],
 
@@ -69,6 +77,9 @@
             "IMSC1.1": {
               aliasOf: "ttml-imsc1.1-20181108"
             },
+            "IMSC1.2": {
+              aliasOf: "ttml-imsc1.2-20200804"
+            },
             "TTML1-1e": {
               aliasOf: "ttml1-20101118"
             },
@@ -99,7 +110,7 @@
     <section id="abstract">
       <h2>Abstract</h2>
       <p>This document defines
-      the <a href='#mediatype'><code>application/ttml+xml</code></a> media
+      the <a href="#mediatype"><code>application/ttml+xml</code></a> media
       type and provides a registry of compact (short) identifiers that may be
       used to identify TTML processor profiles. A processor profile specifies
       a set of capabilities that a processor must support in order to process
@@ -114,7 +125,7 @@
       scoped to the document instance in which it is defined.</p>
     </section>
     <section id="sotd"></section>
-    <section id="purpose" class='informative'>
+    <section id="purpose" class="informative">
       <h2>Purpose</h2>
       <p>This document serves two purposes: (1) to define the Media Type
         <code>application/ttml+xml</code>, and (2) to define a registry
@@ -168,7 +179,7 @@
         supported.</p>
       <p></p>
     </section>
-    <section id="mediatype" class='normative'>
+    <section id="mediatype" class="normative">
       <h2>Media Type Registration</h2>
       <p>This section defines the media type "application/ttml+xml",
         and, in conformance with
@@ -353,7 +364,7 @@
         </dd>
       </dl>
     </section>
-    <section id="Registration_Entry_Requirements_and_Update_Process" class='normative'>
+    <section id="Registration_Entry_Requirements_and_Update_Process" class="normative">
       <h2>Registration Entry Requirements and Update Process</h2>
       <ol>
         <li><p>Each entry must include a unique identification, where the
@@ -395,7 +406,7 @@
         values. That is, the intent is that profile entries are
         "stable".</p>
     </section>
-    <section id="registry" class='normative'>
+    <section id="registry" class="normative">
       <h2>Registry</h2>
       <p>This section is the registry of short form profile
         identifiers. The first sub-section details how such
@@ -540,7 +551,7 @@
               </td>
               <td> <code>http://www.w3.org/ns/ttml/profile/imsc1.1/image</code>
               </td>
-              <td> [[!IMSC1.1]]
+              <td> [[!IMSC1.1]] [[!IMSC1.2]]
               </td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
@@ -551,6 +562,16 @@
               <td> <code>http://www.w3.org/ns/ttml/profile/imsc1.1/text</code>
               </td>
               <td> [[!IMSC1.1]]
+              </td>
+              <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
+              </td>
+            </tr>
+            <tr>
+              <td> <code>im3t</code>
+              </td>
+              <td> <code>http://www.w3.org/ns/ttml/profile/imsc1.2/text</code>
+              </td>
+              <td> [[!IMSC1.2]]
               </td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
