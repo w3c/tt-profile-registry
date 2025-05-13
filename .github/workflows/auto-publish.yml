@@ -1,0 +1,25 @@
+name: Build, and publish spec to GitHub Pages and /TR/
+
+on:
+  workflow_dispatch: {}
+  pull_request: {}
+  push:
+    branches: [main]
+    paths:
+      - 'figures/**'
+      - 'index.html'
+
+jobs:
+  main:
+    name: Build, Validate and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: w3c/spec-prod@v2
+        with:
+          TOOLCHAIN: respec
+          SOURCE: index.html
+          W3C_ECHIDNA_TOKEN: ${{ secrets.W3C_TR_TOKEN }}
+          W3C_WG_DECISION_URL: https://www.w3.org/2022/03/17-tt-minutes.html#r02
+          W3C_BUILD_OVERRIDE: |
+            specStatus: NOTE
