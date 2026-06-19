@@ -454,7 +454,11 @@ codecs-parameter-value
        </li>
         <li>Each entry must include an absolute URI that serves as the
           TTML Profile Designator that identifies the processor
-          profile.</li>
+          profile, or that identifies a content profile from which a
+          processor profile can feasibly be inferred using the TTML2
+          <a data-cite="TTML2-1e#semantics-procedure-construct-inferred-processor-profile"
+          >[construct inferred processor profile]</a> algorithm,
+          or that is otherwise defined by the linked specification.</li>
         <li>Each entry should include a link that references a TTML
           Profile Definition Document that formally specifies the
           processor profile using TTML profile definition
@@ -495,10 +499,8 @@ codecs-parameter-value
           defined, and the relevant contact organisation. Entries are
           ordered alphabetically according to the short profile
           identifier.</p>
-        <table class="simple" style="width:100%; border: 2px solid black">
+        <table class="simple" style="width:110%; border: 2px solid black">
           <thead>
-          </thead>
-          <tbody>
             <tr>
               <th style="width: 2%; text-align:left"> Profile Identifier
               </th>
@@ -506,9 +508,13 @@ codecs-parameter-value
               </th>
               <th style="width: 5%; text-align:left"> Public Specification(s)
               </th>
+              <th style="width: 1%; text-align:left"> Note(s)
+              </th>
               <th style="width: 2%; text-align:left"> Requestor Contact
               </th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
               <td> <code>cfi1</code>
               </td>
@@ -530,12 +536,13 @@ codecs-parameter-value
               </td>
             </tr>
             <tr>
-              <td> <code>dap1</code>
+              <td> <code>da1p</code>
               </td>
               <td> <code>http://www.w3.org/ns/ttml/profile/dapt1.0/processor</code>
               </td>
               <td> [[!DAPT1]]
               </td>
+              <td><a href="#dapt-content-profile"></a></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -544,6 +551,7 @@ codecs-parameter-value
               <td> <code>urn:IRT:ebu-tt-basic-de:2013-07</code> </td>
               <td> [[!EBU-TT-D-Basic-DE]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://www.irt.de/">IRT</a>
               </td>
             </tr>
@@ -554,6 +562,7 @@ codecs-parameter-value
               </td>
               <td> [[!EBU-TT-D-1]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
               </td>
             </tr>
@@ -564,6 +573,7 @@ codecs-parameter-value
               </td>
               <td> [[!EBU-TT-D-1-0-1]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
               </td>
             </tr>
@@ -574,6 +584,7 @@ codecs-parameter-value
               </td>
               <td> [[!EBU-TT-Live-1-0]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
               </td>
             </tr>
@@ -584,6 +595,7 @@ codecs-parameter-value
               </td>
               <td> [[!EBU-TT-1-0]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
               </td>
             </tr>
@@ -594,6 +606,7 @@ codecs-parameter-value
               </td>
               <td> [[!EBU-TT-1-1]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
               </td>
             </tr>
@@ -604,6 +617,7 @@ codecs-parameter-value
               </td>
               <td> [[!EBU-TT-1-2]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://tech.ebu.ch/subtitling">EBU</a>
               </td>
             </tr>
@@ -614,6 +628,7 @@ codecs-parameter-value
               </td>
               <td> [[!IMSC1.0.1]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -624,6 +639,7 @@ codecs-parameter-value
               </td>
               <td> [[!IMSC1.0.1]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -634,6 +650,7 @@ codecs-parameter-value
               </td>
               <td> [[!IMSC1.1]] [[!IMSC1.2]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -644,6 +661,7 @@ codecs-parameter-value
               </td>
               <td> [[!IMSC1.1]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -654,6 +672,7 @@ codecs-parameter-value
               </td>
               <td> [[!IMSC1.2]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -674,6 +693,7 @@ codecs-parameter-value
               </td>
               <td> [[!NetflixIMSC1.1TextProfile]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.netflix.com">Netflix</a>
               </td>
             </tr>
@@ -684,6 +704,7 @@ codecs-parameter-value
               </td>
               <td> [[!RFC8759]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="https://datatracker.ietf.org/wg/avtcore/about/">IETF (avtcore)</a>
               </td>
             </tr>
@@ -694,6 +715,7 @@ codecs-parameter-value
               </td>
               <td> [[!TTML1-3e]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -704,6 +726,7 @@ codecs-parameter-value
               </td>
               <td> [[!TTML1-3e]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -714,6 +737,7 @@ codecs-parameter-value
               </td>
               <td> [[!TTML1-SDP-US]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -724,6 +748,7 @@ codecs-parameter-value
               </td>
               <td> [[!TTML1-3e]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -734,6 +759,7 @@ codecs-parameter-value
               </td>
               <td> [[!TTML2-1e]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -744,6 +770,7 @@ codecs-parameter-value
               </td>
               <td> [[!TTML2-1e]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
@@ -754,12 +781,20 @@ codecs-parameter-value
               </td>
               <td> [[!TTML2-1e]]
               </td>
+              <td></td>
               <td> <a rel="nofollow" class="external text" href="http://www.w3.org/AudioVideo/TT/">TTWG</a>
               </td>
             </tr>
           </tbody>
         </table>
-        </section> <!-- registry-profile-designator-specifications -->
+        <aside class="note">
+          <div>Notes referenced from the above table</div>
+          <p><dfn id="dapt-content-profile">1</dfn> [[DAPT1]] documents declare conformance using a content profile
+            with the designator <code>http://www.w3.org/ns/ttml/profile/dapt1.0/content</code> .
+            No profile identifier is assigned to this designator because it is not a processor profile.
+          </p>
+          </aside>
+      </section> <!-- registry-profile-designator-specifications -->
     </section> <!-- registry -->
   </body>
 </html>
